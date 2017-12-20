@@ -10,21 +10,15 @@ function getMobileOperatingSystem() {
       // Windows Phone must come first because its UA also contains "Android"
     if (/windows phone/i.test(userAgent)) {
 			document.getElementById("downloadLink").href = "https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en";
-    }
-
-    if (/android/i.test(userAgent)) {
+    } else if (/android/i.test(userAgent)) {
 			// https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en
 			document.getElementById("downloadLink").href = "https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en";
-    }
-
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
 			// https://itunes.apple.com/us/app/gocapture/id1160876840
 			document.getElementById("downloadLink").href = "https://itunes.apple.com/us/app/gocapture/id1160876840";
-    }
-
-		if (/Chrome/.test(userAgent) && /Google Inc/.test(navigator.vendor)) {
+    } else if (/Chrome/.test(userAgent) && /Google Inc/.test(navigator.vendor)) {
 			document.getElementById("downloadLink").href = "https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en";
+		} else {
+		  document.getElementById("downloadLink").href = "https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en";
 		}
-
-		document.getElementById("downloadLink").href = "https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en";
 	}
