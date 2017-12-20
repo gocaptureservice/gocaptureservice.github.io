@@ -16,9 +16,5 @@ function getMobileOperatingSystem() {
     } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
 			// https://itunes.apple.com/us/app/gocapture/id1160876840
 			document.getElementById("downloadLink").href = "https://itunes.apple.com/us/app/gocapture/id1160876840";
-    } else if (/Chrome/.test(userAgent) && /Google Inc/.test(navigator.vendor)) {
-			document.getElementById("downloadLink").href = "https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en";
-		} else {
-		  document.getElementById("downloadLink").href = "https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en";
-		}
+    }
 	}
