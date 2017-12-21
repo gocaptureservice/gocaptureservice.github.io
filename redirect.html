@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>News App Redirect</title>
+<script type="text/javascript"> 
+//iOS
+if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+window.location = "https://itunes.apple.com/us/app/gocapture/id1160876840";
+}
+//Android
+else if (navigator.userAgent.match(/android/i)) {
+window.location = "https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en";
+}
+//Fallback page for desktop or other mobile device
+else {
+window.location = "https://play.google.com/store/apps/details?id=com.gocaptureapp&hl=en";
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
