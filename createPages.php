@@ -233,6 +233,7 @@ else{
 					</div>
 				<!-- end body -->
 				</div>
+				</body>
 
 				<script src="https://maps.googleapis.com/maps/api/js?callback=myMap&key=AIzaSyCA4ELTgSMDXIDiq91JXN2RfRDSm5JGmM8"></script>
 
