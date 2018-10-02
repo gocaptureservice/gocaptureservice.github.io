@@ -1,0 +1,87 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body background="Images/background.png">
+	<div class="container" style="background-color:white; border-radius:.25rem!important">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Locations</h1>
+				</div>
+			</div>	
+		</div>
+					
+				
+
+	<div id="content">
+	
+	</div>
+		
+	<!-- container -->
+	</div>
+</body>
+
+<script>
+	$( document ).ready(function() {
+		var columnsTaken = 0;
+		var numColumns = 4;
+		var firstRow = 1;
+		
+		var htmlText = "";
+		alert("test");
+				
+		$.ajax({
+			type: 'POST',
+			url: 'http://159.89.120.122/getLocations.php',
+			success: function(locationsJSON){
+				var locations = eval('(' + locationsJSON + ')');
+				
+				htmlText += '<div class="row">';
+		
+				// output data of each row
+				for (var i = 0; i < locations.length; i++){
+					
+					
+					if (columnsTaken >= 12 && firstRow == 0){
+						
+						columnsTaken = 0;
+						
+						htmlText+=
+						'	</div>'
+						+'	<div class="row">';
+						
+						firstRow = 0;
+					}
+					
+					htmlText += ''
+					+'<div class="col-sm-' + numColumns + '">'
+					+'	<h3 style=\'align="center"\'><a href=locationPages/' + locations[i]["name"].split(' ').join('_') + '.html>' + locations[i]["name"] + '</a> </h3>'
+					+'</div>';
+			
+				
+					columnsTaken += numColumns;
+					
+					
+				}
+				
+				//End the last row
+				
+				htmlText += '</div>';
+				
+				$('#content').html(htmlText);
+			},
+			error: function(error){
+				alert(JSON.stringify(error));
+			}
+		});
+		
+		
+		
+		
+	});
+</script>
