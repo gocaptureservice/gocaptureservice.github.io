@@ -1,5 +1,0 @@
-#!/bin/bash
-git --git-dir=gocaptureservice.github.io/.git rm -f gocaptureservice.github.io/locationPages/*
-git --git-dir=gocaptureservice.github.io/.git commit -m "TEST FROM SHELL"
-git --git-dir=gocaptureservice.github.io/.git push
-git --git-dir=gocaptureservice.github.io/.git pull
