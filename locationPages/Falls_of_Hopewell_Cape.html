@@ -11,7 +11,7 @@
 						<link rel="stylesheet" type="text/css" href="../css/style.css">
 					</head>
 
-					<body background="../Images/background.png">
+					<body background="../images/background.png">
 						<div class="container" style="background-color:white;" border-radius:.25rem!important">
 
 							<div id="content">
@@ -34,7 +34,7 @@
 						
 							$.ajax({
 								type: 'POST',
-								url: '../getLocation.php',
+								url: 'http://159.89.120.122/getLocation.php',
 								data: { 
 									locationId : 337, 
 								},
@@ -65,14 +65,14 @@
 							}
 							
 							//Check if location has photos
-							if (galleryId == ""){
+							if (galleryId == null){
 								//no photo
 								hasImage = false;
 							}
 							else{
 								//photo exists
 								hasImage = true;
-								images.push("http://138.197.162.81/GoCapture/Images/" + galleryId + ".jpg");
+								images.push("http://138.197.162.81/GoCapture/images/" + galleryId + ".jpg");
 							}
 							
 							var htmlText = "";
@@ -136,7 +136,7 @@
 												 
 									if (hasImage == false){
 										htmlText += '<div class="item active">'
-												 + 		'<img src="../Images/noimage.png" >'
+												 + 		'<img src="../images/noimage.png" >'
 												 + 		'</div>';
 																				
 									}
@@ -176,7 +176,7 @@
 											 +'</div>'
 											 +'		<div id="map_container"></div>'
 											 +'		<div id="map" ></div>'
-											 +'		<a href="../locations.php"> Return to Home </a>'
+											 +'		<a href="../locations.html"> Return to Home </a>'
 											 +'		<!-- end container -->'
 											 +'		</div>';
 								
@@ -200,7 +200,7 @@
 								
 								$.ajax({
 									type: 'POST',
-									url: '../UpdateDescription',
+									url: 'http://159.89.120.122/updateDescription.php',
 									data: { 
 										id : id, 
 										description : description 
