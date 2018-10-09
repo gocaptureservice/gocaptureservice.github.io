@@ -26,6 +26,22 @@
     transform: translateY(-50%);
 }
 
+.searchText{
+	height:33px;
+	font-size:19;
+	width:100%;
+	border-radius: 5px;
+	border-color:transparent;
+}
+
+.searchColumn{
+	padding-top:10px;
+}
+
+.searchButton{
+	width:100% !important;
+}
+
 .underline {
   text-decoration: underline;
 }
