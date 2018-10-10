@@ -26,6 +26,22 @@
     transform: translateY(-50%);
 }
 
+.homePageTextSection{
+	margin-top:5%;
+	margin-bottom:5%;
+	padding-right:20%;
+	padding-left:20%;
+}
+
+.logo{
+	margin-left:7%;
+	margin-bottom:3%;
+}
+
+.nav-item{
+	padding-right:15px;
+}
+
 .searchText{
 	height:33px;
 	font-size:19;
@@ -135,10 +151,25 @@
 	}
 }
 
+
+#slides{
+  color: grey;
+  background-color: grey !important;
+}
+
+.carousel{
+  color: grey;
+  background-color: grey !important;
+}
+.carousel .item{
+  color: grey;
+  background-color: grey;
+}
+
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
 	.carousel img {
-        max-height: 300px;    
+        max-height: 580px;    
 	}
 	
 	#map{
