@@ -29,7 +29,7 @@
 .homePageTextSection{
 	margin-top:5%;
 	margin-bottom:5%;
-	padding-right:20%;
+	padding-left:20%;
 	padding-right:20%;
 }
 
@@ -71,6 +71,11 @@
 	padding-top:0px; 
 	margin-top:2%;
 	margin-bottom:2%;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .carousel img {
