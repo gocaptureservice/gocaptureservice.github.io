@@ -30,7 +30,7 @@
 	margin-top:5%;
 	margin-bottom:5%;
 	padding-right:20%;
-	padding-left:20%;
+	padding-right:20%;
 }
 
 .logo{
@@ -73,6 +73,10 @@
 	margin-bottom:2%;
 }
 
+.carousel img {
+        max-height: 580px;    
+	}
+
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 0px) and (max-width: 767px) { 
 
@@ -80,11 +84,11 @@
 		min-height:250px;
 	}
 
-	.carousel {
+	.carouselLocations {
 		min-height:250px;
 	}
 
-	.carousel img {
+	.carouselLocations img {
 		max-height: 250px;    
 	}
 	
@@ -111,7 +115,7 @@
 
 	
 
-	.carousel img {
+	.carouselLocations img {
         max-height: 300px;    
 	}
 	
@@ -130,7 +134,7 @@
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199px) { 
-	.carousel img {
+	.carouselLocations img {
         max-height: 500px;    
 	}
 	
@@ -157,20 +161,22 @@
   background-color: grey !important;
 }
 
-.carousel{
+.carouselLocations{
   color: grey;
   background-color: grey !important;
 }
-.carousel .item{
+.carouselLocations .item{
   color: grey;
   background-color: grey;
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-	.carousel img {
+	.carouselLocations img {
         max-height: 580px;    
 	}
+	
+	
 	
 	#map{
 		padding-bottom: 30%;
