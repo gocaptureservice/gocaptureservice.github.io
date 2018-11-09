@@ -1,14 +1,27 @@
+<!doctype html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css"  href="css/style.css">
+	<script src="javascript/index.js"></script>
+	<script src="javascript/navbar.js"></script>
+	<script src="javascript/footer.js"></script>
+	
+	<script> 
+    $(function(){
+      setNavBar();
+	  borderNavItem("#locationsNav");
+	    
+	  setFooter();
+    });
+    </script> 
 </head>
 
-<body background="images/background.png">
-	<div class="container" style="background-color:white; border-radius:.25rem!important">
+<body>
+	<div id="navbar"></div>
 		<div class="jumbotron">
 			<div class="row">
 				<div class="col-md-12">
@@ -65,9 +78,10 @@
 	<div id="content">
 	
 	</div>
-		
-	<!-- container -->
-	</div>
+	
+	
+	<div id="footer"></div>
+
 </body>
 
 <script>
@@ -80,9 +94,9 @@
 				
 		$.ajax({
 			type: 'POST',
-			url: 'http://159.89.120.122/getLocations.php',
+			url: 'http://178.128.235.104/getLocations.php',
 			success: function(locationsJSON){
-				locations = eval('(' + locationsJSON + ')');
+				locations = JSON.parse(locationsJSON);
 				UpdateDisplayedLocations();
 				
 			},
@@ -114,7 +128,7 @@
 	
 	function UpdateDisplayedLocations(){
 		var columnsTaken = 0;
-		var numColumns = 4;
+		var numColumns = 3;
 		var firstRow = 1;
 		
 		var htmlText = "";
@@ -125,6 +139,7 @@
 	
 		// output data of each row
 		for (var i = 0; i < locations.length; i++){
+		
 		
 			//Check if country is in the dropdown
 			var countryCheck = false;
@@ -179,8 +194,8 @@
 				}
 				
 				htmlText += ''
-				+'<div class="col-sm-' + numColumns + '">'
-				+'	<h3 style=\'align="center"\'><a href=locationPages/' + locations[i]["name"].split(' ').join('_') + '.html>' + locations[i]["name"] + '</a> </h3>'
+				+'<div class="locationColumn col-sm-' + numColumns + '">'
+				+'	<p style=\'align="center"\'><a class="locationLink" href=locationPages/' + locations[i]["name"].split(' ').join('_') + '.html>' + locations[i]["name"] + '</a> </p>'
 				+'</div>';
 		
 			
